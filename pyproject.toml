@@ -1,0 +1,29 @@
+[project]
+name = "deep-learning-architectures"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "jonathan-dale", email = "47530196+jonathan-dale@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.5.2",
+    "torch>=2.13.0",
+]
+
+[project.scripts]
+deep-learning-architectures = "deep_learning_architectures:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
