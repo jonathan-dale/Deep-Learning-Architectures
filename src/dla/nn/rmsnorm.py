@@ -14,17 +14,15 @@ class RMSNorm(nn.Module):
     First calculate the mean of the squared values along the last dimension
     Take the square root to get the RMS
     Normalize and scale by gamma
+    Reference https://arxiv.org/abs/1910.07467
     """
-    # def _rms_norm(self, x: torch.Tensor) -> torch.Tensor:
+    # def forward(self, x: torch.Tensor) -> torch.Tensor:
     #     means = torch.mean(x.pow(2), dim=-1, keepdim=True)
     #     inverted_rms = torch.rsqrt(means + self.eps)
     #     return self.gamma * x * inverted_rms
     
-    def _rms_norm(self, x: torch.Tensor) -> torch.Tensor:
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
         inverted_rms = torch.rsqrt(
                 x.pow(2).mean(dim=-1, keepdim=True) + self.eps
             )
         return x * inverted_rms * self.gamma
-    
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        return self._rms_norm(x)
