@@ -125,14 +125,14 @@ The common pattern is:
 
 $$
 \text{Post-LN:}\quad
-\operatorname{LN}\left(x+\operatorname{Sublayer}(x)\right)
+\mathrm{LN}\left(x+\mathrm{Sublayer}(x)\right)
 $$
 
 and 
 
 $$
 \text{Pre-LN:}\quad
-x+\operatorname{Sublayer}(\operatorname{LN}(x)).
+x+\mathrm{Sublayer}(\mathrm{LN}(x)).
 $$
 
 

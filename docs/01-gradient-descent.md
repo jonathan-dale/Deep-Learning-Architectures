@@ -15,7 +15,7 @@ $$
 and let its loss be $L(\theta)$. Training the model means finding parameters with the smallest loss: 
 
 $$
-\theta^* = \operatorname{argmin}_{\theta} L(\theta).
+\theta^* = \mathrm{argmin}_{\theta} L(\theta).
 $$
 
 For only a single parameter, the derivative $dL/d\theta$ tells us the local slope:
